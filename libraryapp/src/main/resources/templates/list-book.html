@@ -27,7 +27,7 @@
                         </tr>
                         <tr>
                             <td>Category</td>
-                            <td> <span th:each="category:${book.categories}" th:text="${category.name}"></span></td>
+                            <td th:text="${book.categories[0].name}"></td>
                         </tr>
                         <tr>
                             <td>Book name</td>
@@ -35,19 +35,15 @@
                         </tr>
                         <tr>
                             <td>Author name</td>
-                            <td>
-                                <span th:each="author : ${book.authors}" th:text="${author.name}"></span>
-                            </td>
+                            <td th:text="${book.authors[0].name}"></td>
                         </tr>
                         <tr>
                             <td>Publisher name</td>
-                            <td th:text="${book.publishers.name}"></td>
+                            <td th:text="${book.publishers[0].name}"></td>
                         </tr>
                         <tr>
                             <td>Book description</td>
-                            <td>
-                                <span th:each="publisher : ${book.publishers}" th:text="${publisher.name}"></span>
-                            </td>
+                            <td th:text="${book.description}"></td>
                         </tr>
                     </table>
                 </div>

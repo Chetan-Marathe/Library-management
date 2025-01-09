@@ -8,9 +8,9 @@ import java.util.HashSet;
 import java.util.Set;
 //With the help of lombok no need to write getter,setter and constructor boilerplatecode
 //
-//@Getter
-//@Setter
-//@NoArgsConstructor
+@Getter
+@Setter
+
 
 
 @Entity
