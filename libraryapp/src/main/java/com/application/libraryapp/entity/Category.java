@@ -19,13 +19,13 @@ public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    public Long id;
 
     @Column(name="name",length = 50,nullable = false,unique = true)
-    private String name;
+    public String name;
 
     @ManyToMany(mappedBy = "categories",cascade = CascadeType.ALL)
-    private Set<Book> books = new HashSet<Book>();
+    public Set<Book> books = new HashSet<Book>();
 
     public Category(String name) {
         this.name = name;

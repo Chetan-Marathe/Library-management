@@ -18,13 +18,13 @@ import java.util.Set;
 public class Publisher {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    public Long id;
 
     @Column(name="name",length = 50,nullable = false,unique = true)
-    private String name;
+    public String name;
 
     @ManyToMany(mappedBy = "publishers",cascade = CascadeType.ALL)
-    private Set<Book> books = new HashSet<Book>();
+    public Set<Book> books = new HashSet<Book>();
 
     public Publisher(String name) {
         this.name = name;
@@ -61,6 +61,5 @@ public class Publisher {
     }
 
     public Publisher(){
-
     }
 }

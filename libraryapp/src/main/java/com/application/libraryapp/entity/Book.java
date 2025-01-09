@@ -18,37 +18,37 @@ import java.util.Set;
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    public Long id;
 
     @Column(name="isbn", length=50 ,nullable = false,unique = true)
-    private String isbn;
+    public String isbn;
 
     @Column(name="name", length=50 ,nullable = false)
-    private String name;
+    public String name;
 
     @Column(name="description", length=250 ,nullable = false)
-    private String description;
+    public String description;
 
     @ManyToMany(cascade = {CascadeType.ALL})
     @JoinTable(name = "books_authors",
                joinColumns = {@JoinColumn(name="book_id")},
                inverseJoinColumns = {@JoinColumn(name="author_id")}
     )
-    private Set<Author> authors = new HashSet<Author>();
+    public Set<Author> authors = new HashSet<Author>();
 
     @ManyToMany(cascade = {CascadeType.ALL})
     @JoinTable(name = "books_categories",
             joinColumns = {@JoinColumn(name="book_id")},
             inverseJoinColumns = {@JoinColumn(name="category_id")}
     )
-    private Set<Category> categories = new HashSet<Category>();
+    public Set<Category> categories = new HashSet<Category>();
 
     @ManyToMany(cascade = {CascadeType.ALL})
     @JoinTable(name = "books_publisher",
             joinColumns = {@JoinColumn(name="book_id")},
             inverseJoinColumns = {@JoinColumn(name="publisher_id")}
     )
-    private Set<Publisher> publishers = new HashSet<Publisher>();
+    public  Set<Publisher> publishers = new HashSet<Publisher>();
 
 
 

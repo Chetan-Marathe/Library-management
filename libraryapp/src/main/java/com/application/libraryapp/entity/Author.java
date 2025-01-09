@@ -17,16 +17,16 @@ public class Author {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    public Long id;
 
     @Column(name="name", length=100 ,nullable = false,unique = true)
-    private String name;
+    public String name;
 
     @Column(name="description", length=250 ,nullable = false)
-    private String description;
+    public String description;
 
     @ManyToMany(mappedBy = "authors",cascade = CascadeType.ALL)
-    private Set<Book> books = new HashSet<Book>();
+    public Set<Book> books = new HashSet<Book>();
     //Set is an interface in java that is part of java.util package
     //It represent collection of element that cannot contain duplicate items
     //HashSet is class in java that implements the Set interface . It stores element in form of hashtable for fast
